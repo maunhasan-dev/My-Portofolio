@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills — Maunhasan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style-v4.css">
+
+  <style>
+    /* Style KHUSUS untuk halaman Skills saja. */
+
+    .page-header {
+      padding: var(--space-lg) 0 var(--space-md);
+    }
+
+    section { margin-bottom: var(--space-xl); }
+
+    /* --- Grup tech stack (dikelompokkan per kategori) --- */
+    .skill-group {
+      margin-top: var(--space-md);
+    }
+    .skill-group h3 {
+      font-size: var(--text-sm);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .skill-group .tag {
+      font-size: var(--text-sm);
+      padding: 6px 14px;
+    }
+
+    /* --- Kartu untuk "Di Luar Coding" --- */
+    .passion-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+    }
+    @media (min-width: 640px) {
+      .passion-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .passion-item {
+      padding: var(--space-sm);
+      border-left: 2px solid var(--color-secondary);
+    }
+    .passion-item h3 {
+      font-size: var(--text-base);
+      margin-bottom: 4px;
+    }
+    .passion-item p {
+      font-size: var(--text-sm);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <span class="logo">M.</span>
+      <ul class="nav-links">
+        <li><a href="home-v8.html">Home</a></li>
+        <li><a href="about-v6.html">About</a></li>
+        <li><a href="projects-v4.html">Projects</a></li>
+        <li><a href="experience-v1.html">Experience</a></li>
+        <li><a href="skills-v1.html">Skills</a></li>
+        <li><a href="contact-v1.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <header class="page-header reveal">
+      <p class="eyebrow">01 — Kemampuan</p>
+      <h1>Skills</h1>
+      <p style="max-width: 480px; margin-top: var(--space-xs);">
+        Teknologi yang sedang saya pelajari, dan beberapa minat lain di luar dunia coding yang turut membentuk cara saya bekerja.
+      </p>
+    </header>
+
+    <!-- ============ SECTION 1: TECH STACK ============ -->
+    <section class="reveal">
+      <p class="eyebrow">02 — Tech Stack</p>
+      <h2>Yang Sedang Saya Kuasai</h2>
+
+      <!-- GANTI/TAMBAH: sesuaikan dengan kemampuan asli kamu.
+           Kelompokkan biar gampang dipindai (scan) sama pembaca. -->
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </div>
+
+      <div class="skill-group">
+        <h3>Tools</h3>
+        <span class="tag">Chrome DevTools</span>
+        <span class="tag">Git &amp; GitHub</span>
+      </div>
+
+      <div class="skill-group">
+        <h3>Sedang Dipelajari</h3>
+        <!-- GANTI INI: apa yang lagi kamu pelajari sekarang -->
+        <span class="tag">Responsive Design</span>
+        <span class="tag">JavaScript Lanjutan</span>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ SECTION 2: DI LUAR CODING ============ -->
+    <section class="reveal">
+      <p class="eyebrow">03 — Di Luar Coding</p>
+      <h2>Minat Lain yang Membentuk Cara Saya Bekerja</h2>
+      <p style="max-width: 520px; margin-top: 8px;">
+        Latar belakang di luar dunia teknis ini yang sering memberi sudut pandang berbeda saat membangun sebuah produk.
+      </p>
+
+      <div class="passion-grid">
+        <!-- GANTI INI: sesuaikan deskripsinya kalau kurang pas -->
+        <div class="passion-item">
+          <h3>Farming &amp; Herbal</h3>
+          <p>Minat di dunia pertanian dan produk herbal — jadi dasar kenapa saya membangun Djamuntara.</p>
+        </div>
+        <div class="passion-item">
+          <h3>Investment</h3>
+          <p>Belajar dasar-dasar analisa dan pengelolaan keuangan, membantu saya melihat produk dari sisi bisnis, bukan cuma teknis.</p>
+        </div>
+        <div class="passion-item">
+          <h3>Writing</h3>
+          <p>Suka menulis ide bisnis dan strategi konten, termasuk mempelajari cara menyusun lead magnet yang efektif.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script-v4.js"></script>
+
+</body>
+</html>

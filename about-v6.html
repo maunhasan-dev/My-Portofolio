@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang — Maunhasan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style-v4.css">
+
+  <style>
+    /* Style khusus halaman About.
+       Navbar & footer sama persis dengan home-v2.html,
+       supaya konsisten di semua halaman (bagian ini nanti
+       akan sama di about.html, projects.html, dst). */
+
+    
+    
+    
+    
+    
+    
+    
+
+    /* --- Khusus halaman About --- */
+    .page-header {
+      padding: var(--space-lg) 0 var(--space-md);
+      text-align: center;
+    }
+    .about-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: var(--color-border);
+      margin: 0 auto var(--space-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      overflow: hidden;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* List nilai (values) - pakai grid biar rapi */
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+    }
+    @media (min-width: 640px) {
+      .values-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .value-item {
+      padding: var(--space-sm);
+      border-left: 2px solid var(--color-secondary); /* garis kecil di kiri, aksen sage green */
+    }
+    .value-item h3 { font-size: var(--text-base); margin-bottom: 4px; }
+    .value-item p { font-size: var(--text-sm); margin: 0; }
+
+    /* List sederhana untuk pendidikan & pengalaman */
+    .simple-list {
+      margin-top: var(--space-sm);
+    }
+    .simple-list-item {
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .simple-list-item:last-child {
+      border-bottom: none;
+    }
+    .simple-list-item .meta {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    .simple-list-item h3 {
+      font-size: var(--text-base);
+      margin-top: 4px;
+    }
+
+    section { margin-bottom: var(--space-lg); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <span class="logo">M.</span>
+      <ul class="nav-links">
+        <li><a href="home-v8.html">Home</a></li>
+        <li><a href="about-v6.html">About</a></li>
+        <li><a href="projects-v4.html">Projects</a></li>
+        <li><a href="experience-v1.html">Experience</a></li>
+        <li><a href="skills-v1.html">Skills</a></li>
+        <li><a href="contact-v1.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ============ PAGE HEADER: PROFIL SINGKAT ============ -->
+    <header class="page-header reveal">
+      <div class="about-photo">
+        <!-- Ganti jadi <img src="foto-profil.jpg" alt="Foto Maunhasan"> kalau sudah ada foto -->
+        FOTO
+      </div>
+      <p class="eyebrow" style="justify-content:center;">01 — Tentang Saya</p>
+      <h1>Maunhasan</h1>
+      <p style="max-width: 480px; margin: var(--space-xs) auto 0;">
+        <!-- GANTI INI: intro singkat 2-3 kalimat, boleh lebih personal
+             dari yang di Home, karena orang yang buka halaman ini
+             memang ingin kenal kamu lebih dalam -->
+        Sedang membangun kemampuan sebagai web developer, belajar dari nol menggunakan HTML, CSS, dan JavaScript langsung dari smartphone.
+      </p>
+    </header>
+
+    <hr class="divider">
+
+    <!-- ============ NILAI YANG DIPEGANG ============ -->
+    <section class="reveal">
+      <p class="eyebrow">02 — Prinsip</p>
+      <h2>Nilai yang Saya Pegang</h2>
+
+      <div class="values-grid">
+        <!-- GANTI INI: isi dengan nilai yang benar-benar kamu pegang.
+             Ini contoh, silakan ganti judul & deskripsinya. -->
+        <div class="value-item">
+          <h3>Teliti</h3>
+          <p>Memperhatikan detail kecil, dari struktur kode sampai tampilan akhir.</p>
+        </div>
+        <div class="value-item">
+          <h3>Konsisten Belajar</h3>
+          <p>Membangun kemampuan sedikit demi sedikit lewat proyek nyata, bukan cuma teori.</p>
+        </div>
+        <div class="value-item">
+          <h3>Rendah Hati</h3>
+          <p>Terbuka menerima masukan dan terus memperbaiki hasil kerja.</p>
+        </div>
+        <div class="value-item">
+          <h3>Solutif</h3>
+          <p>Fokus mencari solusi praktis, sesuai dengan sumber daya yang tersedia.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ PENDIDIKAN ============ -->
+    <section class="reveal">
+      <p class="eyebrow">03 — Riwayat</p>
+      <h2>Pendidikan</h2>
+
+      <div class="simple-list">
+        <!-- GANTI INI: isi pendidikan asli kamu. Bisa ditambah item lagi
+             dengan copy-paste blok div.simple-list-item di bawah ini -->
+        <div class="simple-list-item">
+          <p class="meta">TAHUN — TAHUN</p>
+          <h3>Nama Sekolah/Kampus</h3>
+          <p>Jurusan atau bidang yang dipelajari.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ PENGALAMAN SINGKAT ============ -->
+    <section class="reveal">
+      <p class="eyebrow">04 — Ringkasan</p>
+      <h2>Pengalaman Singkat</h2>
+
+      <div class="simple-list">
+        <!-- GANTI INI: ringkasan 1-2 pengalaman paling relevan.
+             Detail lengkap semua pengalaman ada di halaman Experience -->
+        <div class="simple-list-item">
+          <p class="meta">2025 — SEKARANG</p>
+          <h3>Belajar Web Development Mandiri</h3>
+          <p>Membangun beberapa project web app dari nol, termasuk Djamuntara (e-commerce herbal) dan Lead Magnet Idea Generator.</p>
+        </div>
+      </div>
+
+      <a href="experience-v1.html" class="btn btn-secondary" style="margin-top: var(--space-sm);">Lihat Semua Pengalaman</a>
+    </section>
+
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>© 2026 Maunhasan. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-icons">
+      <!-- Setiap ikon SVG digambar manual pakai garis sederhana,
+           bukan logo resmi brand -- supaya gaya konsisten sama
+           font mono & warna yang sudah kita pakai di seluruh situs. -->
+      <a href="mailto:maunhasan05@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="2,4 12,13 22,4"></polyline></svg>
+      </a>
+      <a href="#" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle><path d="M10 21v-7a3 3 0 0 1 6 0v7M10 21v-9a1 1 0 0 1 0-.3"></path></svg>
+      </a>
+      <a href="#" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-11.9 7.8L3 21l1.7-6.1A8.5 8.5 0 1 1 21 11.5Z"></path><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5"></path></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script-v4.js"></script>
+
+</body>
+</html>
