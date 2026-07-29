@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience — Maunhasan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style-v5.css">
+
+  <style>
+    .page-header { padding: var(--space-lg) 0 var(--space-md); }
+
+    .timeline {
+      position: relative;
+      margin-top: var(--space-md);
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background-color: var(--color-border);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-lg);
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--color-secondary);
+      border: 2px solid var(--color-background);
+      box-shadow: 0 0 0 1px var(--color-secondary);
+    }
+    .timeline-item .meta {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      letter-spacing: 0.05em;
+    }
+    .timeline-item h3 { margin-top: 4px; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <span class="logo">M.</span>
+      <ul class="nav-links">
+        <li><a href="home-v10.html">Home</a></li>
+        <li><a href="about-v7.html">About</a></li>
+        <li><a href="projects-v5.html">Projects</a></li>
+        <li><a href="experience-v2.html">Experience</a></li>
+        <li><a href="skills-v2.html">Skills</a></li>
+        <li><a href="contact-v2.html">Contact</a></li>
+        <li>
+          <div class="lang-toggle">
+            <button data-lang="id">ID</button>
+            <button data-lang="en">EN</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <header class="page-header reveal">
+      <p class="eyebrow" data-i18n="experience.eyebrow1">01 — Riwayat</p>
+      <h1 data-i18n="experience.title">Experience</h1>
+      <p style="max-width: 480px; margin-top: var(--space-xs);" data-i18n="experience.subtitle">
+        Perjalanan belajar dan pengalaman saya di dunia web development, disusun dari yang paling baru.
+      </p>
+    </header>
+
+    <!-- ============ TIMELINE ============ -->
+    <div class="timeline reveal">
+
+      <div class="timeline-item">
+        <p class="meta" data-i18n="experience.item1.meta">2026 — SEKARANG</p>
+        <h3 data-i18n="experience.item1.title">Belajar Web Development Mandiri</h3>
+        <p data-i18n="experience.item1.desc">Membangun kemampuan sebagai web developer secara mandiri, dimulai dari dasar HTML, CSS, dan JavaScript, hingga menyelesaikan beberapa project nyata untuk brand dan bisnis, termasuk Djamuntara, MHB Farm, dan Etalase Marketing.</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="meta" data-i18n="experience.item2.meta">2021 — SEKARANG</p>
+        <h3 data-i18n="experience.item2.title">Investment &amp; Trading</h3>
+        <p data-i18n="experience.item2.desc">Mempelajari dan mempraktikkan analisa dasar investasi serta pengelolaan risiko dalam trading, sebagai bagian dari memahami sisi keuangan dan pengambilan keputusan bisnis secara lebih matang.</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="meta" data-i18n="experience.item3.meta">2020 — SEKARANG</p>
+        <h3 data-i18n="experience.item3.title">Mengajar Tahfidz Al-Qur'an</h3>
+        <p data-i18n="experience.item3.desc">Membimbing santri dalam melafadzkan dan menghafalkan Al-Qur'an secara baik dan benar serta bersanad, melatih kesabaran, konsistensi, dan kemampuan menyampaikan sesuatu dengan cara yang mudah dipahami.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ============ FOOTER ============
+       (sebelumnya kelewat di halaman ini -- sekarang sudah ada,
+       konsisten sama halaman lain) -->
+  <footer>
+    <p>© 2026 Maunhasan. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-icons">
+      <a href="mailto:maunhasan05@gmail.com" aria-label="Email">MAIL</a>
+      <a href="https://github.com/maunhasan-dev" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+      <a href="https://wa.me/6285161256322" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
+    </div>
+  </footer>
+
+  <script src="i18n-v1.js"></script>
+  <script src="script-v5.js"></script>
+
+</body>
+</html>

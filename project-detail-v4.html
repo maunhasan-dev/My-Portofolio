@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Detail — Maunhasan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style-v5.css">
+
+  <style>
+    #project-detail { padding: var(--space-lg) 0; }
+
+    .detail-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: var(--color-border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin: var(--space-sm) 0;
+      overflow: hidden;
+    }
+    .detail-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    .btn-row { display: flex; gap: var(--space-xs); flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <span class="logo">M.</span>
+      <ul class="nav-links">
+        <li><a href="home-v10.html">Home</a></li>
+        <li><a href="about-v7.html">About</a></li>
+        <li><a href="projects-v5.html">Projects</a></li>
+        <li><a href="experience-v2.html">Experience</a></li>
+        <li><a href="skills-v2.html">Skills</a></li>
+        <li><a href="contact-v2.html">Contact</a></li>
+        <li>
+          <div class="lang-toggle">
+            <button data-lang="id">ID</button>
+            <button data-lang="en">EN</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Div ini kosong sengaja -- diisi otomatis oleh script-v5.js
+         berdasarkan ?id=... di URL -->
+    <div id="project-detail" class="reveal"></div>
+
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>© 2026 Maunhasan. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-icons">
+      <a href="mailto:maunhasan05@gmail.com" aria-label="Email">MAIL</a>
+      <a href="https://github.com/maunhasan-dev" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+      <a href="https://wa.me/6285161256322" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
+    </div>
+  </footer>
+
+  <script src="i18n-v1.js"></script>
+  <script src="script-v5.js"></script>
+
+</body>
+</html>

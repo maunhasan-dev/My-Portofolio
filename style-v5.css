@@ -1,0 +1,405 @@
+/* =====================================================
+   PORTFOLIO DESIGN SYSTEM - v1
+   File ini adalah "kotak alat" gaya visual.
+   Semua halaman (index.html, about.html, dll) akan
+   memanggil file ini lewat: <link rel="stylesheet" href="style-v1.css">
+   ===================================================== */
+
+/* ---------- 1. FONT ----------
+   Kita ambil font dari Google Fonts. Baris ini nanti
+   ditaruh di bagian <head> tiap file HTML, contoh ada
+   di bawah file ini (lihat komentar paling bawah). */
+
+/* ---------- 2. DESIGN TOKENS (variabel) ----------
+   :root artinya "berlaku untuk seluruh halaman".
+   Variabel CSS itu kayak kamus: kita kasih nama untuk
+   sebuah nilai, supaya kalau nanti mau ganti warna,
+   kita cuma ubah di SATU tempat ini saja, bukan
+   di ratusan baris kode. */
+:root {
+  /* Warna */
+  --color-primary: #6B4E34;       /* Earth Brown - warna utama, tombol, judul penting */
+  --color-secondary: #87A96B;     /* Sage Green - aksen, hover, highlight */
+  --color-background: #F7F5F2;    /* Warm Ivory - latar belakang halaman */
+  --color-surface: #FFFFFF;       /* putih - latar belakang card, biar beda dari background */
+  --color-text: #2B2B2B;          /* Charcoal - warna teks utama */
+  --color-text-muted: #6B6B63;    /* abu-abu hangat - teks sekunder/deskripsi */
+  --color-border: #E4DED3;        /* garis tipis pemisah, warna netral hangat */
+
+  /* Font */
+  --font-display: 'Fraunces', serif;         /* untuk judul (h1, h2) */
+  --font-body: 'Inter', sans-serif;          /* untuk paragraf & teks umum */
+  --font-mono: 'JetBrains Mono', monospace;  /* untuk label kecil & tag teknologi */
+
+  /* Ukuran teks (type scale) - naik bertahap, bukan asal-asalan */
+  --text-xs: 0.75rem;    /* 12px - label kecil */
+  --text-sm: 0.875rem;   /* 14px - teks sekunder */
+  --text-base: 1rem;     /* 16px - teks normal */
+  --text-lg: 1.25rem;    /* 20px - subjudul */
+  --text-xl: 2rem;       /* 32px - judul section */
+  --text-2xl: 3rem;      /* 48px - judul besar di Hero */
+
+  /* Jarak (spacing) - pakai kelipatan 8, biar konsisten */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+
+  /* Lengkung sudut & bayangan */
+  --radius: 8px;
+  --shadow-card: 0 2px 12px rgba(43, 43, 43, 0.06);
+}
+
+/* ---------- 3. RESET DASAR ----------
+   Browser punya gaya bawaan yang beda-beda (margin, dsb).
+   Reset ini menyamakan titik awal semua browser. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* biar padding tidak menambah lebar elemen */
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6; /* jarak antar baris teks, biar enak dibaca */
+
+  /* ---- FIX: sticky footer ----
+     min-height: 100vh -> tinggi body minimal SETINGGI LAYAR,
+     meskipun isi kontennya pendek.
+     display: flex + flex-direction: column -> menyusun isi
+     body (container & footer) dari atas ke bawah, sehingga
+     salah satu elemen bisa "mendorong" elemen lain sampai
+     ke ujung paling bawah layar. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- 4. TIPOGRAFI DASAR ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+
+p {
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* ---------- 5. EYEBROW LABEL (ciri khas visual) ----------
+   Ini elemen "tanda tangan" desain kita: label kecil
+   huruf kapital di atas judul section, kayak catatan
+   pinggir di notebook. Dipakai di SETIAP section. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em; /* jarak antar huruf, biar terkesan rapi/teliti */
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.eyebrow::before {
+  /* PERUBAHAN v3: dulu garis statis, sekarang kotak kecil
+     yang berkedip pelan kayak kursor terminal. Ini yang
+     bikin nuansa "developer notebook" makin terasa. */
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  animation: blink-cursor 1.4s step-end infinite;
+}
+
+/* Animasi kedap-kedip untuk kursor di atas.
+   step-end artinya perubahannya "patah" (nyala-mati),
+   bukan pudar halus, biar terasa seperti kursor beneran. */
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ---------- 6. TOMBOL (BUTTON) ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease; /* biar perubahan hover halus, tidak "patah" */
+}
+
+/* PERUBAHAN v3: tombol "membesar" sedikit saat disentuh,
+   dan "mengecil" sedikit saat ditekan -> kesan playful,
+   seperti tombol beneran yang bisa "ditekan". */
+.btn:hover {
+  transform: scale(1.03);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Aksesibilitas: saat elemen dipilih pakai tombol Tab
+   di keyboard, harus ada tanda jelas elemen mana yang aktif.
+   Ini penting, jangan dihapus meskipun tidak terlihat di HP. */
+.btn:focus-visible,
+.nav-links a:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+.btn-primary:hover {
+  background-color: #5a4029; /* sedikit lebih gelap dari primary saat di-hover */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* ---------- 7. CARD ----------
+   Dipakai untuk project card, dsb. */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- 8. TAG (untuk tech stack di project) ---------- */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #EFECE5;
+  color: var(--color-text);
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+/* ---------- 9. DIVIDER ---------- */
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  border: none;
+  margin: var(--space-lg) 0;
+}
+
+/* ---------- 10. CONTAINER ----------
+   Membatasi lebar konten biar tidak terlalu lebar
+   di layar besar, tapi tetap penuh di HP. */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  flex: 1 0 auto;
+}
+
+/* PERBAIKAN v5: di layar besar (laptop/monitor), 720px kerasa
+   terlalu sempit -- banyak ruang kosong di kiri-kanan yang gak
+   kepakai. Kita lebarkan bertahap sesuai ukuran layar. */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 860px;
+    padding: 0 var(--space-md);
+  }
+}
+
+/* ---------- 11. SCROLL REVEAL (v3) ----------
+   Class ini ditempel ke elemen yang mau "muncul perlahan"
+   saat discroll. Kondisi AWAL-nya tidak terlihat (opacity 0)
+   dan agak turun (translateY 16px).
+   JavaScript (script-v3.js) yang nanti menambahkan class
+   "is-visible" saat elemen ini masuk ke layar. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- 12. HORMATI PENGGUNA YANG MATIKAN ANIMASI ----------
+   Sebagian orang mengaktifkan "reduce motion" di HP-nya
+   (biasanya karena pusing/mual lihat animasi). Kode ini
+   otomatis MEMATIKAN semua animasi & transisi untuk mereka.
+   Ini bukan opsional -- ini bagian dari aksesibilitas dasar. */
+/* ---------- 13. NAVBAR (v4) ----------
+   PERUBAHAN PENTING: sebelumnya CSS navbar ini di-copy manual
+   di SETIAP file HTML (Home, About, Projects, Detail). Sekarang
+   dipusatkan di sini -- 1 sumber untuk semua halaman. Kalau ada
+   perbaikan lagi nanti, cukup diubah di SATU tempat ini saja. */
+.navbar {
+  display: flex;
+  flex-direction: column; /* default mobile: logo di atas, menu di bawah */
+  align-items: flex-start;
+  gap: 8px;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.navbar .logo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+/* PERBAIKAN BUG: dulu nav-links pakai flex-wrap, jadi tiap menu
+   yang tidak muat akan pindah ke baris baru -> tabrakan sama
+   logo "M." di layar sempit (ini yang bikin "berantakan").
+   Sekarang: 1 baris tunggal, bisa digeser ke samping (scroll)
+   kalau menunya lebih lebar dari layar. */
+.nav-links {
+  display: flex;
+  gap: var(--space-sm);
+  list-style: none;
+  flex-wrap: nowrap;
+  overflow-x: auto;           /* boleh digeser ke samping */
+  white-space: nowrap;        /* tulisan menu tidak boleh terpotong ke baris baru */
+  width: 100%;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch; /* scroll lebih halus di iOS */
+  scrollbar-width: thin;
+}
+.nav-links a {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.nav-links a:hover { color: var(--color-primary); }
+
+/* Di layar lebih lebar (tablet/laptop), navbar kembali sejajar
+   horizontal seperti biasa -- karena ruang sudah cukup. */
+@media (min-width: 640px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-links {
+    width: auto;
+    overflow-x: visible;
+  }
+}
+
+
+/* ---------- 14. FOOTER (v4) ---------- */
+footer {
+  text-align: center;
+  padding: var(--space-lg) 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* PERUBAHAN v5: ikon SVG manual diganti jadi badge teks mono
+   ("GH", "WA", "MAIL") -- lebih rapi, konsisten sama gaya
+   monogram "M." yang sudah jadi identitas visual kamu, dan
+   tidak beresiko bentuknya terlihat kurang presisi. */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-sm);
+}
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+.footer-icons a:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+/* ---------- 16. TOMBOL TOGGLE BAHASA (v5) ----------
+   Tombol kecil "ID / EN" di navbar. Salah satu sisi jadi
+   "aktif" (warna solid), sisi lain redup -- menandakan
+   bahasa mana yang sedang dipakai. */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: all 0.2s ease;
+}
+.lang-toggle button.active {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* ---------- 15. HORMATI PENGGUNA YANG MATIKAN ANIMASI ----------
+   (dikembalikan setelah sempat terhapus -- ini penting, jangan
+   dihapus lagi. Lihat penjelasan di bagian sebelumnya soal
+   accessibility "reduce motion".) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

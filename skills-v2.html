@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills — Maunhasan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style-v5.css">
+
+  <style>
+    .page-header { padding: var(--space-lg) 0 var(--space-md); }
+    section { margin-bottom: var(--space-xl); }
+
+    .skill-group { margin-top: var(--space-md); }
+    .skill-group h3 {
+      font-size: var(--text-sm);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .skill-group .tag { font-size: var(--text-sm); padding: 6px 14px; }
+
+    .passion-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+    }
+    @media (min-width: 640px) {
+      .passion-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .passion-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .passion-item {
+      padding: var(--space-sm);
+      border-left: 2px solid var(--color-secondary);
+    }
+    .passion-item h3 { font-size: var(--text-base); margin-bottom: 4px; }
+    .passion-item p { font-size: var(--text-sm); margin: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <span class="logo">M.</span>
+      <ul class="nav-links">
+        <li><a href="home-v10.html">Home</a></li>
+        <li><a href="about-v7.html">About</a></li>
+        <li><a href="projects-v5.html">Projects</a></li>
+        <li><a href="experience-v2.html">Experience</a></li>
+        <li><a href="skills-v2.html">Skills</a></li>
+        <li><a href="contact-v2.html">Contact</a></li>
+        <li>
+          <div class="lang-toggle">
+            <button data-lang="id">ID</button>
+            <button data-lang="en">EN</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <header class="page-header reveal">
+      <p class="eyebrow" data-i18n="skills.eyebrow1">01 — Kemampuan</p>
+      <h1 data-i18n="skills.title">Skills</h1>
+      <p style="max-width: 480px; margin-top: var(--space-xs);" data-i18n="skills.subtitle">
+        Teknologi yang sedang saya pelajari, dan beberapa minat lain di luar dunia coding yang turut membentuk cara saya bekerja.
+      </p>
+    </header>
+
+    <!-- ============ TECH STACK ============ -->
+    <section class="reveal">
+      <p class="eyebrow" data-i18n="skills.eyebrow2">02 — Tech Stack</p>
+      <h2 data-i18n="skills.techTitle">Yang Sedang Saya Kuasai</h2>
+
+      <div class="skill-group">
+        <h3 data-i18n="skills.group.frontend">Frontend</h3>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </div>
+
+      <div class="skill-group">
+        <h3 data-i18n="skills.group.tools">Tools</h3>
+        <span class="tag">GitHub</span>
+        <span class="tag">Chrome DevTools</span>
+      </div>
+
+      <div class="skill-group">
+        <h3 data-i18n="skills.group.learning">Sedang Dipelajari</h3>
+        <span class="tag">Responsive Design</span>
+        <span class="tag">JavaScript Lanjutan</span>
+        <span class="tag">Git (version control)</span>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ DI LUAR CODING ============ -->
+    <section class="reveal">
+      <p class="eyebrow" data-i18n="skills.eyebrow3">03 — Di Luar Coding</p>
+      <h2 data-i18n="skills.passionTitle">Minat Lain yang Membentuk Cara Saya Bekerja</h2>
+      <p style="max-width: 520px; margin-top: 8px;" data-i18n="skills.passionSubtitle">
+        Latar belakang di luar dunia teknis ini yang sering memberi sudut pandang berbeda saat membangun sebuah produk.
+      </p>
+
+      <div class="passion-grid">
+        <div class="passion-item">
+          <h3 data-i18n="skills.passion1.title">Farming &amp; Herbal</h3>
+          <p data-i18n="skills.passion1.desc">Minat di dunia pertanian dan produk herbal, menjadi dasar pengembangan MHB Farm dan Djamuntara.</p>
+        </div>
+        <div class="passion-item">
+          <h3 data-i18n="skills.passion2.title">Investment &amp; Trading</h3>
+          <p data-i18n="skills.passion2.desc">Mempelajari analisa dasar investasi dan pengelolaan risiko trading sejak 2021, membantu saya memahami pengambilan keputusan bisnis dari sudut pandang yang berbeda.</p>
+        </div>
+        <div class="passion-item">
+          <h3 data-i18n="skills.passion3.title">Writing</h3>
+          <p data-i18n="skills.passion3.desc">Menulis artikel dan blog menjadi salah satu cara saya menyalurkan ide, termasuk ide bisnis dan strategi konten seperti menyusun lead magnet yang efektif.</p>
+        </div>
+        <div class="passion-item">
+          <h3 data-i18n="skills.passion4.title">Mengajar Tahfidz Al-Qur'an</h3>
+          <p data-i18n="skills.passion4.desc">Membimbing santri menghafal Al-Qur'an sejak 2020, melatih kesabaran dan konsistensi yang saya bawa ke berbagai bidang lain, termasuk dunia coding.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ FOOTER ============
+       (sebelumnya kelewat di halaman ini -- sekarang sudah ada) -->
+  <footer>
+    <p>© 2026 Maunhasan. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-icons">
+      <a href="mailto:maunhasan05@gmail.com" aria-label="Email">MAIL</a>
+      <a href="https://github.com/maunhasan-dev" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+      <a href="https://wa.me/6285161256322" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
+    </div>
+  </footer>
+
+  <script src="i18n-v1.js"></script>
+  <script src="script-v5.js"></script>
+
+</body>
+</html>

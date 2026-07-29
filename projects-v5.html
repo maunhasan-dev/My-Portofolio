@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Maunhasan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style-v5.css">
+
+  <style>
+    .page-header { padding: var(--space-lg) 0 var(--space-md); }
+
+    .search-bar {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background-color: var(--color-surface);
+      color: var(--color-text);
+      margin-top: var(--space-sm);
+    }
+    .search-bar:focus {
+      outline: none;
+      border-color: var(--color-secondary);
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: var(--space-sm);
+    }
+    .filter-chip {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--color-border);
+      background-color: transparent;
+      color: var(--color-text-muted);
+      cursor: pointer;
+    }
+    .filter-chip.active {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-surface);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+    }
+    @media (min-width: 640px) {
+      .project-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .project-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .card-link:hover { transform: translateY(-2px); }
+
+    #empty-state {
+      display: none;
+      text-align: center;
+      padding: var(--space-lg) 0;
+      color: var(--color-text-muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <span class="logo">M.</span>
+      <ul class="nav-links">
+        <li><a href="home-v10.html">Home</a></li>
+        <li><a href="about-v7.html">About</a></li>
+        <li><a href="projects-v5.html">Projects</a></li>
+        <li><a href="experience-v2.html">Experience</a></li>
+        <li><a href="skills-v2.html">Skills</a></li>
+        <li><a href="contact-v2.html">Contact</a></li>
+        <li>
+          <div class="lang-toggle">
+            <button data-lang="id">ID</button>
+            <button data-lang="en">EN</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <header class="page-header reveal">
+      <p class="eyebrow" data-i18n="projects.eyebrow1">01 — Karya</p>
+      <h1 data-i18n="projects.title">Projects</h1>
+      <p style="max-width: 480px; margin-top: var(--space-xs);" data-i18n="projects.subtitle">
+        Kumpulan project yang sudah saya kerjakan. Cari atau saring berdasarkan kategori di bawah ini.
+      </p>
+
+      <input
+        type="text"
+        id="search-input"
+        class="search-bar"
+        data-i18n-placeholder="projects.search.placeholder"
+        placeholder="Cari project... (misal: brand, herbal)"
+      >
+
+      <div class="filter-row">
+        <button class="filter-chip active" data-category="all" data-i18n="projects.filter.all">Semua</button>
+        <button class="filter-chip" data-category="brand" data-i18n="projects.filter.brand">Brand Website</button>
+        <button class="filter-chip" data-category="webapp" data-i18n="projects.filter.webapp">Web App</button>
+      </div>
+    </header>
+
+    <div class="project-grid" id="project-grid"></div>
+
+    <p id="empty-state" data-i18n="projects.emptyState">Tidak ada project yang cocok. Coba kata kunci lain.</p>
+
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>© 2026 Maunhasan. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-icons">
+      <a href="mailto:maunhasan05@gmail.com" aria-label="Email">MAIL</a>
+      <a href="https://github.com/maunhasan-dev" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+      <a href="https://wa.me/6285161256322" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
+    </div>
+  </footer>
+
+  <script src="i18n-v1.js"></script>
+  <script src="script-v5.js"></script>
+
+</body>
+</html>

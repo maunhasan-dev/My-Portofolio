@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maunhasan — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style-v5.css">
+
+  <style>
+    .hero {
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+    .hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: var(--color-border);
+      margin: 0 auto var(--space-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      overflow: hidden;
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero h1 { margin-bottom: var(--space-xs); }
+    .hero p.headline {
+      color: var(--color-text-muted);
+      font-size: var(--text-lg);
+      max-width: 520px;
+      margin: 0 auto var(--space-md);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+    }
+    @media (min-width: 640px) {
+      .project-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .about-teaser {
+      text-align: center;
+      padding: var(--space-lg) 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <span class="logo">M.</span>
+      <ul class="nav-links">
+        <li><a href="home-v10.html">Home</a></li>
+        <li><a href="about-v7.html">About</a></li>
+        <li><a href="projects-v5.html">Projects</a></li>
+        <li><a href="experience-v2.html">Experience</a></li>
+        <li><a href="skills-v2.html">Skills</a></li>
+        <li><a href="contact-v2.html">Contact</a></li>
+        <li>
+          <div class="lang-toggle">
+            <button data-lang="id">ID</button>
+            <button data-lang="en">EN</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero reveal">
+      <div class="hero-photo">FOTO</div>
+      <p class="eyebrow" style="justify-content:center;" data-i18n="home.eyebrow1">01 — Halo, perkenalkan</p>
+      <h1>Maunhasan</h1>
+      <p class="headline" data-i18n="home.headline">
+        Belajar webapp development dengan membangun produk digital yang benar-benar dipakai oleh bisnis nyata, dari website brand, sistem operasional pertanian, sampai tools marketing berbasis AI untuk UMKM Indonesia.
+      </p>
+      <a href="projects-v5.html" class="btn btn-primary" data-i18n="home.btn.viewProjects">View Projects</a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ HIGHLIGHT PROJECT ============ -->
+    <section class="reveal">
+      <p class="eyebrow" data-i18n="home.eyebrow2">02 — Karya Pilihan</p>
+      <h2 data-i18n="home.highlightTitle">Highlight Project</h2>
+
+      <div class="project-grid">
+
+        <a href="project-detail-v4.html?id=djamuntara" class="card card-link">
+          <h3>Djamuntara</h3>
+          <p style="margin: 8px 0 12px;" data-i18n="home.project.djamuntara.desc">Website resmi brand jamu Djamuntara, menghadirkan produk herbal organik dengan pengalaman modern, dari katalog produk sampai artikel kesehatan, dibangun untuk mencerminkan identitas brand-nya.</p>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </a>
+
+        <a href="project-detail-v4.html?id=mhb-farm" class="card card-link">
+          <h3>MHB Farm</h3>
+          <p style="margin: 8px 0 12px;" data-i18n="home.project.mhbfarm.desc">Website operasional untuk MHB Farm, mencakup SOP penanaman, monitoring jadwal tanam dan panen, reminder perawatan berkala, pencatatan hasil panen otomatis ke spreadsheet, serta AI chatbot untuk membantu operasional harian.</p>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </a>
+
+        <a href="project-detail-v4.html?id=etalase-marketing" class="card card-link">
+          <h3>Etalase Marketing</h3>
+          <p style="margin: 8px 0 12px;" data-i18n="home.project.etalase.desc">AI Marketing Workspace untuk UMKM Indonesia, memadukan Business Context dengan tools Content, Lead Magnet, Landing Page, Email, Sales Funnel, Campaign, dan Analytics dalam satu tempat.</p>
+          <span class="tag">HTML</span>
+          <span class="tag">JavaScript</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============ ABOUT TEASER ============ -->
+    <section class="about-teaser reveal">
+      <p class="eyebrow" style="justify-content:center;" data-i18n="home.eyebrow3">03 — Tentang Saya</p>
+      <p style="max-width: 480px; margin: 0 auto var(--space-sm);" data-i18n="home.aboutTeaser">
+        Saya percaya cara terbaik belajar adalah dengan langsung praktik, membangun produk digital untuk brand dan bisnis nyata. Fokus saya saat ini ada di HTML, CSS, dan JavaScript, sambil terus mengasah cara berpikir yang lebih terstruktur dalam membangun sebuah produk digital.
+      </p>
+      <a href="about-v7.html" class="btn btn-secondary" data-i18n="home.btn.learnMore">Learn More</a>
+    </section>
+
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>© 2026 Maunhasan. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-icons">
+      <a href="mailto:maunhasan05@gmail.com" aria-label="Email">MAIL</a>
+      <a href="https://github.com/maunhasan-dev" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+      <a href="https://wa.me/6285161256322" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
+    </div>
+  </footer>
+
+  <script src="i18n-v1.js"></script>
+  <script src="script-v5.js"></script>
+
+</body>
+</html>
